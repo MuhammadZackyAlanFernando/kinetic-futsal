@@ -43,8 +43,8 @@ Proyek ini dikembangkan sebagai tugas akhir semester mata kuliah Pengembangan We
 | Bahasa Pemrograman | PHP 8.2+ |
 | Database | MySQL 8.0 |
 | Frontend | Blade Template, Tailwind CSS |
-| Authentication | Laravel Breeze / Sanctum |
-| Server Lokal | XAMPP / Laragon |
+| Authentication | Laravel Breeze |
+| Server Lokal | Laragon |
 
 ---
 
@@ -155,10 +155,10 @@ kinetic-futsal/
 
 ## 👨‍💻 Pengembang
 
-**Zacky Alan**
+**Muhammad Zacky Alan Fernando**
 Mahasiswa Sistem Informasi — Universitas Sriwijaya
 
-- GitHub: [@ZackyAlan](https://github.com/ZackyAlan)
+- GitHub: [@MuhammadZackyAlanFernando](https://github.com/MuhammadZackyAlanFernando)
 
 ---
 
