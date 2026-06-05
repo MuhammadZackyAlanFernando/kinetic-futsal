@@ -50,7 +50,7 @@ Proyek ini dikembangkan sebagai tugas akhir semester mata kuliah Pengembangan We
 
 ## ⚙️ Instalasi & Menjalankan Lokal
 
-Pastikan kamu sudah menginstal: **PHP 8.2+**, **Composer**, **MySQL**, dan **Node.js**.
+Pastikan sudah menginstal: **PHP 8.2+**, **Composer**, **MySQL**, dan **Node.js**.
 
 ### 1. Clone repositori
 
