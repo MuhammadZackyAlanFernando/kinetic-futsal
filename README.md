@@ -1,58 +1,167 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# ⚽ Kinetic Futsal
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+> Platform pemesanan lapangan futsal berbasis web — dibangun dengan Laravel 11.
 
-## About Laravel
+![PHP](https://img.shields.io/badge/PHP-8.2+-777BB4?style=flat-square&logo=php&logoColor=white)
+![Laravel](https://img.shields.io/badge/Laravel-11-FF2D20?style=flat-square&logo=laravel&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=flat-square&logo=mysql&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 📋 Tentang Proyek
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+**Kinetic Futsal** adalah aplikasi web untuk pemesanan lapangan futsal secara online. Aplikasi ini memudahkan pelanggan untuk melihat ketersediaan lapangan, melakukan booking, dan mengelola jadwal bermain — sementara admin dapat mengelola lapangan, jadwal, dan data pemesanan dari satu dashboard terpusat.
 
-## Learning Laravel
+Proyek ini dikembangkan sebagai tugas akhir semester mata kuliah Pengembangan Web, Program Studi Sistem Informasi, Fakultas Ilmu Komputer, Universitas Sriwijaya.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## ✨ Fitur Utama
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+### 👤 Pelanggan
+- Registrasi dan login akun
+- Lihat daftar lapangan beserta foto dan informasi
+- Cek ketersediaan slot waktu secara real-time
+- Booking lapangan dengan pilihan tanggal dan jam
+- Riwayat pemesanan dan status booking
+- Konfirmasi pembayaran dengan upload bukti transfer
 
-## Agentic Development
+### 🛡️ Admin
+- Dashboard pengelolaan lapangan dan jadwal
+- Manajemen data pemesanan (konfirmasi / tolak)
+- Kelola pengguna terdaftar
+- Laporan pemesanan dan pendapatan
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+---
+
+## 🛠️ Teknologi yang Digunakan
+
+| Komponen | Teknologi |
+|---|---|
+| Backend Framework | Laravel 11 |
+| Bahasa Pemrograman | PHP 8.2+ |
+| Database | MySQL 8.0 |
+| Frontend | Blade Template, Tailwind CSS |
+| Authentication | Laravel Breeze / Sanctum |
+| Server Lokal | XAMPP / Laragon |
+
+---
+
+## ⚙️ Instalasi & Menjalankan Lokal
+
+Pastikan kamu sudah menginstal: **PHP 8.2+**, **Composer**, **MySQL**, dan **Node.js**.
+
+### 1. Clone repositori
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone https://github.com/ZackyAlan/kinetic-futsal.git
+cd kinetic-futsal
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 2. Install dependensi PHP
 
-## Contributing
+```bash
+composer install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 3. Install dependensi JavaScript
 
-## Code of Conduct
+```bash
+npm install
+npm run build
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 4. Konfigurasi environment
 
-## Security Vulnerabilities
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Lalu edit file `.env` sesuai konfigurasi database lokal kamu:
 
-## License
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=kinetic_futsal
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 5. Migrasi dan seed database
+
+```bash
+php artisan migrate --seed
+```
+
+### 6. Jalankan server
+
+```bash
+php artisan serve
+```
+
+Aplikasi berjalan di `http://localhost:8000`
+
+---
+
+## 🗂️ Struktur Direktori
+
+```
+kinetic-futsal/
+├── app/
+│   ├── Http/Controllers/   # Controller untuk setiap modul
+│   ├── Models/             # Eloquent models
+│   └── ...
+├── database/
+│   ├── migrations/         # Skema tabel database
+│   └── seeders/            # Data awal (lapangan, admin, dll)
+├── resources/
+│   └── views/              # Blade templates
+│       ├── admin/          # Halaman dashboard admin
+│       ├── booking/        # Halaman proses booking
+│       └── auth/           # Halaman login & register
+├── routes/
+│   └── web.php             # Definisi routing
+└── public/                 # Assets publik
+```
+
+
+## 📸 Screenshot
+<img width="1865" height="859" alt="Screenshot 2026-06-05 142609" src="https://github.com/user-attachments/assets/5ac48202-f11f-4ecd-ad27-ae27de41bb4a" />
+<img width="609" height="780" alt="Screenshot 2026-06-05 142427" src="https://github.com/user-attachments/assets/18d18127-bf10-4d84-8d14-1ce31874ba96" />
+<img width="1878" height="855" alt="Screenshot 2026-06-05 142523" src="https://github.com/user-attachments/assets/6c8168da-d656-4033-a26f-8aad7507291e" />
+<img width="1864" height="863" alt="Screenshot 2026-06-05 142625" src="https://github.com/user-attachments/assets/d01a389d-3f1a-43c4-a9cd-1dde15665465" />
+
+<img width="1888" height="859" alt="Screenshot 2026-06-05 142501" src="https://github.com/user-attachments/assets/fd596d90-1c4d-46cd-854c-c0c7187dc2dc" />
+
+
+<img width="1875" height="863" alt="Screenshot 2026-06-05 142635" src="https://github.com/user-attachments/assets/c3a6eca9-ff83-488c-9764-b0f322e1882d" />
+
+
+---
+
+## 🗺️ Rencana Pengembangan
+
+- [ ] Integrasi payment gateway (Midtrans / Xendit)
+- [ ] Notifikasi WhatsApp otomatis setelah booking
+- [ ] QR Code tiket untuk check-in di venue
+- [ ] Fitur recurring booking (booking mingguan/bulanan)
+- [ ] Laporan dan analitik pendapatan yang lebih lengkap
+- [ ] Aplikasi mobile (React Native)
+
+---
+
+## 👨‍💻 Pengembang
+
+**Zacky Alan**
+Mahasiswa Sistem Informasi — Universitas Sriwijaya
+
+- GitHub: [@ZackyAlan](https://github.com/ZackyAlan)
+
+---
+
+## 📄 Lisensi
+
+Proyek ini dilisensikan di bawah [MIT License](LICENSE).
